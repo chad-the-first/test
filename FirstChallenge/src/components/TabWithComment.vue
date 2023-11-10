@@ -9,33 +9,35 @@ export default {
         <input type="checkbox" :id='id' />
         <label :for='id'>
             {{ title }}
-            <font-awesome-icon class="clickable" :icon="['far', 'comments']" size="lg"/>
+            <button><font-awesome-icon class="clickable" :icon="['far', 'comments']" size="lg"/></button>
             <span class="number1">{{ comments }}</span>
-            <font-awesome-icon class="clickable" :icon="['far', 'images']" size="lg"/>
+            <button><font-awesome-icon class="clickable" :icon="['far', 'images']" size="lg"/></button>
             <span class="number2">{{ pictures }}</span>
-            <p class="details clickable">{{ details }}</p>
+            <button class="details">{{ details }}</button>
         </label>
         <br>
         <div class="commentArea">
             <input type="text" placeholder="Add your coment here..."/>
-            <font-awesome-icon class="clickable" :icon="['fas', 'camera-retro']" size="lg"/>
-            <font-awesome-icon class="clickable" :icon="['far', 'thumbs-up']" size="lg"/>
-            <font-awesome-icon class="clickable" :icon="['far', 'thumbs-down']" size="lg"/>
-            <div :class="enabled" class="clickable">SAVE</div>
+            <button><font-awesome-icon :icon="['fas', 'camera-retro']" size="lg"/></button>
+            <button><font-awesome-icon :icon="['far', 'thumbs-up']" size="lg"/></button>
+            <button><font-awesome-icon :icon="['far', 'thumbs-down']" size="lg"/></button>
+            <button :class="enabled">SAVE</button>
             <div class="extraComment" v-if="extraMessage">{{ extraMessage }}</div>
         </div>
     </div>
 </template>
 
 <style scoped>
-
-.clickable:hover {
-    cursor: pointer;
-}
 .commentTab {
     margin-top: 10px;
-
     border-bottom: 1px solid #000;
+}
+
+input[type=checkbox] {
+    margin-top: 20px;
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
 }
 
 label {
@@ -46,7 +48,7 @@ label {
 }
 
 label > :first-child {
-    margin: 0 10px;
+    margin-left: 10px;
 }
 
 label p {
@@ -58,6 +60,18 @@ label p {
     color: var(--blue);
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+    color: #707070;
+    border: none;
+
+}
+
+/* number of comments and pictures */
 .number1, .number2 {
     display: inline-block;
     text-align: center;
@@ -72,14 +86,26 @@ label p {
     top: -11px;
 }
 .number1 {
-    left: -22px;
+    left: -15px;
 }
 
-input[type=checkbox] {
-    margin-top: 20px;
-    margin-right: 15px;
-    width: 18px;
-    height: 18px;
+/* detail button next to comments and pictures */
+.details {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.commentArea {
+    position: relative;
+}
+.commentArea > :nth-child(2) {
+    position: absolute;
+    top: 32px;
+    left: 560px;
+}
+.commentArea > :nth-child(3) {
+    margin: 0 10px;
 }
 
 input[type=text] {
@@ -99,23 +125,13 @@ input[type=text] {
     color: #bababa;
 }
 
-.commentArea {
-    position: relative;
-}
 
-.commentArea > :nth-child(2) {
-    position: absolute;
-    top: 32px;
-    left: 560px;
-}
-.commentArea > :nth-child(3) {
-    margin: 0 10px;
-}
-
+/* enabled or disabled save button */
 .enabled, .disabled {
     display: inline-block;
     margin-left: 20px;
     font-size: 16px;
+    font-weight: 500;
     background-color: rgb(200, 200, 200);
     color: #3d3d3d;
     padding: 10px 15px;
@@ -130,6 +146,7 @@ input[type=text] {
 
 }
 
+/* extra text above the comment input field */
 .extraComment {
     position: absolute;
     left: 100px;

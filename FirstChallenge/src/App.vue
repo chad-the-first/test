@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Header from './components/TheHeader.vue'
+import HeaderTab from './components/TheHeader.vue'
 import TasksTabs from './components/TasksTabs.vue'
 import FilesTab from './components/FilesTab.vue'
 </script>
 
 <template>
   <header>
-    <Header />
+    <HeaderTab />
   </header>
 
   <main>

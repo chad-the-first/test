@@ -2,8 +2,6 @@
 export default {
   props: ['title', 'id'],
 }   
-
-
 </script>
 
 <template>
