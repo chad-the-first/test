@@ -17,7 +17,7 @@ import FilesTab from './components/FilesTab.vue'
 </template>
 
 <style scoped>
-header {
+/* header {
   display: flex;
   flex-direction: row;
   position:sticky;
@@ -32,5 +32,5 @@ header {
     display: flex;
     flex-direction: row;
   }
-}
+} */
 </style>

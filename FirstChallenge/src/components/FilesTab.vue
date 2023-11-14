@@ -11,35 +11,15 @@ export default {
 </script>
 
 <template>
-    <div class="files">
-        <h2>Files</h2>
-        <img :src="image"/>
-        <img :src="image"/>
-        <img :src="image"/>
-        <img :src="image"/>
-        <img :src="image"/>
-        <img :src="image"/>
-        <img :src="image"/>
-        <img :src="image"/>
-
-    </div>
+  <h2 class="p-5 font-medium text-2xl mb-5">Files</h2>
+  <div class="px-5 flex flex-row">
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+    <img class="w-52 h-52 rounded-xl mr-5" :src="image"/>
+  </div>
 </template>
-
-<style scoped>
-.files {
-    margin-top: 80px;
-    margin-left: 20px;
-    white-space: nowrap;
-}
-h2 {
-    margin-bottom: 30px;
-    font-weight: 500;
-}
-
-img {
-    height: 200px;
-    width: 200px;
-    border-radius: 25px;
-    margin: 0 10px;
-}
-</style>

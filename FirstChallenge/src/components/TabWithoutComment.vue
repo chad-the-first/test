@@ -1,38 +1,17 @@
 <script lang="ts">
 export default {
-  props: ['title', 'id'],
+  props: ['title', 'id', 'secondary'],
 }   
 </script>
 
 <template>
-    <div class="mainTab">
-          <input type="checkbox" :id='id'/>
-          <label :for='id'><font-awesome-icon class="chevron" :icon="['fas', 'chevron-down']" />{{ title }}</label>
+    <div class="px-4 py-5">
+          <input class="w-4 h-4 relative top-0.5 mr-3" type="checkbox" :id='id'/>
+          <label :class="{'pl-4': secondary}" class="font-semibold text-slate-500" :for='id'>
+            <span class="mr-3">
+                <font-awesome-icon class="chevron" :icon="['fas', 'chevron-down']" />
+            </span>
+            {{ title }}
+        </label>
     </div>
 </template>
-
-<style scoped>
-.mainTab {
-    font-weight: 700;
-    border-bottom: 2px solid #909090;
-    height: 60px;
-    z-index: 1;
-    cursor: pointer;
-}
-input[type=checkbox] {
-    margin-top: 20px;
-    margin-right: 15px;
-    width: 18px;
-    height: 18px;
-    z-index: 2;
-}
-
-label {
-    position: relative;
-    top: -2px;
-}
-.chevron {
-    margin-right: 10px;
-}
-
-</style>

@@ -21,47 +21,31 @@
 </script>
 
 <template>
-    <div class="Tasks">
+  <div class="p-5 relative">
+      <div class="absolute w-4/5 -top-1.5 -left-1 h-2 bg-yellow-300 rounded"></div>
       
-        <h2>Tasks</h2>
+        <h2 class="font-medium text-2xl mb-5">Tasks</h2>
 
-        <div class="Accordion" >
+        <div class="divide-y-2" >
           <TabWithoutComment @click.prevent="toggleTab(1)" id="one" title="2.3 Body Shop" />
 
-          <div class="AccordionTab2" v-if="handle1">
-            <TabWithoutComment @click.prevent="toggleTab(2)" id="two" title="2.3.1 General Work Shop Area"/>
+          <div class="divide-y-2" v-if="handle1">
+            <TabWithoutComment @click.prevent="toggleTab(2)" id="two" title="2.3.1 General Work Shop Area" secondary="true"/>
             
-            <div class="CommentTab" v-if="handle2">
-              <TabWithComment id="three" title="2.3.1.3 Are all the work bays clearly marked?" comments="6" pictures="4" details="DETAILS" enabled="disabled" extraMessage="Add your comment here..."/>
+            <div class="divide-y-2" v-if="handle2">
+              <TabWithComment id="three" title="2.3.1.3 Are all the work bays clearly marked?" comments="6" pictures="4" details="DETAILS" extraMessage="Add your comment here..."/>
               <TabWithComment id="four" title="2.3.1.3 Are all the work bays clearly drunk?" comments="0" pictures="2" enabled="enabled" />
             </div>
 
           </div>
-        </div>
-        <div class="QuestionTab">
-          <TabWithoutComment @click.prevent="toggleTab(3)" id="five" title="Custom questions" />
-          
-          <div class="CommentTab" v-if="handle3">
-            <TabWithComment id="six" title="What brand of car paint is being used?" comments="6" pictures="2" enabled="disabled" />
+          <div class="divide-y-2">
+            <TabWithoutComment @click.prevent="toggleTab(3)" id="five" title="Custom questions" />
+            
+            <div class="CommentTab" v-if="handle3">
+              <TabWithComment id="six" title="What brand of car paint is being used?" comments="6" pictures="2" />
+            </div>
+            
           </div>
-
         </div>
       </div>
 </template>
-
-<style scoped>
-
-.Tasks {
-  margin-left: 20px;
-}
-
-h2 {
-  margin-bottom: 30px;
-  font-weight: 500;
-}
-
-.AccordionTab2 > :first-child > :nth-child(2) {
-  margin-left: 10px;
-}
-
-</style>
